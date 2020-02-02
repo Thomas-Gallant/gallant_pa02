@@ -1,7 +1,6 @@
 package gallant_p2;
 
 import java.text.DecimalFormat;
-import java.math.RoundingMode;
 import java.util.Scanner;
 
 public class BMICalculator {
@@ -23,22 +22,25 @@ public class BMICalculator {
 	public double Bmi;
 	public String bmiCategory;
 	
+	//reads in the height and weight of the user
 	public void readUserData() {
-		// makes use of both readUnitType and readMeasuementData methods
+		
 		System.out.println("Welcome to the BMI calculator!");
 		readUnitType();
 		readMeasurementData();
 	}
 	
+	//ask the user if they want to use imperial or metric
 	private void readUnitType() {
 		
 		System.out.println("Would you like to use metric or imperial?");
 		unitType = in.next();
 	}
 	
+	//loops through question until imperial or metric is entered as a answer
 	private void readMeasurementData() {
 		
-		//calls either readMetricData or readImperialData method
+		
 		String metric = "metric";
 		String imperial = "imperial";
 		
@@ -57,6 +59,7 @@ public class BMICalculator {
 		}
 	}
 	
+	// reads in the metric data if that option is chosen
 	private void readMetricData() {
 		
 		System.out.println("What is your weight in kilograms?");
@@ -65,6 +68,7 @@ public class BMICalculator {
 		setHeight();
 	}
 	
+	// reads in the imperial data if that option is chosen
 	private void readImperialData() {
 		System.out.println("What is your weight in Pounds?");
 		setWeight();
@@ -72,6 +76,7 @@ public class BMICalculator {
 		setHeight();
 	}
 	
+	//calculates the BMI depending upon imperial or metric units
 	public void calculateBmi() {
 		double height = getHeight();
 		double weight = getWeight();
@@ -90,6 +95,7 @@ public class BMICalculator {
 		calculateBmiCategory();
 	}
 	
+	// provide BMI category depending upon BMI calculated
 	private void calculateBmiCategory() {
 		
 		if (Bmi <= 18.5) {
@@ -109,6 +115,7 @@ public class BMICalculator {
 		}
 	}
 	
+	// Prints the calculated BMI and BMI category
 	public void displayBmi() {
 		System.out.println("Your bmi is " + df.format(Bmi) +  " and your bmi category is " +  bmiCategory);
 	}
@@ -117,6 +124,7 @@ public class BMICalculator {
 		return weight;
 	}
 	
+	// sets weight and ends program if weight is a negative number
 	private void setWeight() {
 
 		double inputWeight = in.nextDouble();
@@ -128,13 +136,16 @@ public class BMICalculator {
 			System.exit(0);
 	}
 	
+	
 	public double getHeight() {
 		return height;
 	}
 	
+	// sets height and ends program if height is a negative number
 	private void setHeight() {
 		
 		double inputHeight = in.nextDouble();
+		in.close();
 		
 		if (inputHeight >= 0) {
 			this.height = inputHeight;

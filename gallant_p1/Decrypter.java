@@ -1,6 +1,9 @@
 package gallant_p1;
 
-
+// decrypt the code and return the 4 digit code
+// will have to convert the string into characters and characters into integers
+// integers will be decrypted
+// integers will then be converted back to characters and characters back to string, and the string will then be reordered 
 public class Decrypter {
 	
 	public String decrypt(String fourDigitCode) {

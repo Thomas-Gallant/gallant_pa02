@@ -1,5 +1,9 @@
 package gallant_p1;
 
+//encrypt the code and return the 4 digit encrypted code
+//will have to convert the string into characters and characters into integers
+//integers will be encrypted
+//integers will then be converted back to characters and characters back to string, and the string will then be reordered 
 public class Encrypter {
 	
 	public String encrypt(String fourDigitCode){
