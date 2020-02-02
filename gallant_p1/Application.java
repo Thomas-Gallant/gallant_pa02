@@ -16,10 +16,8 @@ public class Application {
 	public static void main(String[] args) {
 		
 		Application app = new Application();
-		Decrypter de = new Decrypter();
 		app.readInteger();
 		app.encryptAndPrintEncrypt();
-		de.decrypt();
 		app.decryptAndPrintDecrypt();
 	}
 	
@@ -37,6 +35,8 @@ public class Application {
 	}
 	
 	public void decryptAndPrintDecrypt() {
+		Decrypter de = new Decrypter();
+		fourDigitCode = de.decrypt(fourDigitCode);
 		System.out.println(fourDigitCode);
 	}
 }	
