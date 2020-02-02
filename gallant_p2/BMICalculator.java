@@ -43,7 +43,6 @@ public class BMICalculator {
 		String imperial = "imperial";
 		
 		while (true){
-			System.out.println(unitType);
 			if (unitType.equals(metric)) {
 				readMetricData();
 				break;
@@ -119,8 +118,14 @@ public class BMICalculator {
 	}
 	
 	private void setWeight() {
+
+		double inputWeight = in.nextDouble();
 		
-		this.weight = in.nextDouble();
+		if (inputWeight >= 0) {
+			this.weight = inputWeight;
+		}
+		else
+			System.exit(0);
 	}
 	
 	public double getHeight() {
@@ -128,7 +133,14 @@ public class BMICalculator {
 	}
 	
 	private void setHeight() {
-		this.height = in.nextDouble();
+		
+		double inputHeight = in.nextDouble();
+		
+		if (inputHeight >= 0) {
+			this.height = inputHeight;
+		}
+		else
+			System.exit(0);
 	}
 	
 	public double getBmi() {
