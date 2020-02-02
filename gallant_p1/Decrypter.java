@@ -1,10 +1,15 @@
 package gallant_p1;
 
+import gallant_p1.Application;
+
 public class Decrypter {
-
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+	
+	public int decrypt() {
+		
+		Application app = new Application();
+	
+	
+	return 0;
 	}
 
 }
