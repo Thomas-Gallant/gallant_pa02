@@ -1,13 +1,11 @@
 package gallant_p1;
 
-import gallant_p1.Application;
-
 public class Encrypter {
 	
-	public void encrypt(String fourDigitCode){
+	public String encrypt(String fourDigitCode){
 		
 		for(int i=0; i<4; i++) {
-			char charHolder = fourDigitCode.charAt(0);
+			char charHolder = fourDigitCode.charAt(i);
 			int intHolder = Character.getNumericValue(charHolder);
 			intHolder = (intHolder + 7) % 10;
 			charHolder = (char)(intHolder + '0');
@@ -30,5 +28,6 @@ public class Encrypter {
 		}
 		
 		fourDigitCode = fourDigitCode.substring(2, 3) + fourDigitCode.substring(3, 4) + fourDigitCode.substring(0, 1) + fourDigitCode.substring(1, 2);
+	return fourDigitCode;
 	}
 }

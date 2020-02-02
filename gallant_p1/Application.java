@@ -31,7 +31,7 @@ public class Application {
 	public void encryptAndPrintEncrypt() {
 		
 		Encrypter en = new Encrypter();
-		en.encrypt(fourDigitCode);
+		fourDigitCode = en.encrypt(fourDigitCode);
 		
 		System.out.println(fourDigitCode);
 	}
